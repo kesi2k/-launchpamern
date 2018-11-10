@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
 
 
 //dynamic port binding
-const PORT = process.env.port || 5000
+const PORT = process.env.PORT || 5000
 
-app.listen(PORT);
+app.listen(PORT, function(){
+	console.log("app running on port 5000")
+});
