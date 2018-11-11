@@ -32,7 +32,7 @@ passport.use(new GoogleStrategy(
 	clientSecret: keys.googleClientSecret,
 	callbackURL: '/auth/google/callback',
 	// Heroku runs through proxies for load balancing etc. This setting tells Google OAuth to trust its https:// and not revert to http:
-	//proxy: true
+	proxy: true
 }, (accessToken, refreshToken, profile, done ) => {
 	//console.log('Access token', accessToken);
 	//console.log('Refresh token', refreshToken);
