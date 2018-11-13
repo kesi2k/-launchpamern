@@ -11,6 +11,10 @@ require('./models/User');
 const passportConfig = require('./services/passport')
 
 mongoose.connect(keys.mongoURI);
+const requireLogin = require('./middlewares/requireLogin');
+
+const User = mongoose.model('users')
+
 const app = express();
 
 app.use(
@@ -45,11 +49,36 @@ app.get('/auth/google/callback', passport.authenticate('google'),
 		}
 );
 
-app.get('/logout', (req, res) => {
+app.get('/api/current_user', (req, res) => {
+	res.send(req.user);
+})
+
+app.get('/api/logout', (req, res) => {
 	req.logout();
 	res.redirect('/');
 	
 });
+
+app.get('/api/users', async (req, res) => {
+	const users = await User.find();
+	res.send(users);
+})
+
+
+if(process.env.NODE_ENV === 'production')
+{
+	// Express will serve production assets
+	// like main.js file or, main.css
+	app.use(express.static('client/build'));
+
+	// Express will serve index.html if a request comes in that is not matched with any of the routes above.
+	const path = require('path');
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+	})
+
+
+}
 
 //dynamic port binding
 const PORT = process.env.PORT || 5000
