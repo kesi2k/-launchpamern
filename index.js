@@ -34,9 +34,9 @@ app.get('/', (req, res) => {
 	res.send({hi: "Hi waaazzzuppp" + ' ' + token});
 })
 
-app.get('/dashboard', (req, res) => {
-	res.send('Dashboard here ' + req.user);
-})
+// app.get('/dashboard', (req, res) => {
+// 	res.send('Dashboard here ' + req.user);
+// })
 
 app.get('/auth/google', passport.authenticate('google',{
 	scope: ['profile', 'email']
