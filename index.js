@@ -30,9 +30,9 @@ app.use(passport.session());
 
 var token = 'No value';
 
-app.get('/', (req, res) => {
-	res.send({hi: "Hi waaazzzuppp" + ' ' + token});
-})
+// app.get('/', (req, res) => {
+// 	res.send({hi: "Hi waaazzzuppp" + ' ' + token});
+// })
 
 // app.get('/dashboard', (req, res) => {
 // 	res.send('Dashboard here ' + req.user);
