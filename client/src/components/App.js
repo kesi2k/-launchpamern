@@ -6,9 +6,7 @@ import * as actions from '../actions';
 import Header from './Header.js';
 import Landing from './Landing.js';
 import Dashboard from './Dashboard.js';
-
-
-const InfoFill = () => <h2> Personal Information Form</h2>;
+import InfoFill from './InfoFill.js';
 
 
 

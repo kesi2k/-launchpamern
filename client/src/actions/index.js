@@ -38,17 +38,19 @@ export const fetchUser = () => async (dispatch) => {
 // }
 
 
-// export const submitSurvey = (values, history) => async dispatch =>{
-// 	const res = await axios.post('/api/surveys', values);
+export const updateInfo = (values, history) => async dispatch =>{
 
-// 	history.push('/surveys');
+	console.log("In action updateinfo", values)
+	const res = await axios.post('/api/usersave', values);
 
-// 	dispatch({
-// 		type: FETCH_USER,
-// 		payload:res.data
-// 	})
+	history.push('/dashboard');
 
-// }
+	dispatch({
+		type: FETCH_USER,
+		payload:res.data
+	})
+
+}
 
 export const fetchAllUsers = () => async dispatch =>{
 	const res = await axios.get('/api/users')
