@@ -12,8 +12,8 @@ class InfoFill extends Component
 {
 	onSubmit(values)
 	{
-		console.log(this.props.auth)
-		console.log("In on submit", values);
+		//console.log(this.props.auth)
+		//console.log("In on submit", values);
 		this.props.updateInfo(values, this.props.history);
 
 	}

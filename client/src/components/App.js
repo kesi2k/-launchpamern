@@ -7,6 +7,7 @@ import Header from './Header.js';
 import Landing from './Landing.js';
 import Dashboard from './Dashboard.js';
 import InfoFill from './InfoFill.js';
+import DashboardView from './DashboardView.js';
 
 
 
@@ -24,6 +25,7 @@ class App extends Component {
 						<Header />
 						<Route exact={ true } path="/" component={ Landing } />
 						<Route exact={ true } path = "/dashboard" component = { Dashboard } />
+						<Route exact={ true } path = "/userview/:id" component = { DashboardView } />
 						<Route path = "/info/fill" component = { InfoFill } />
 					</div>
 				</BrowserRouter>

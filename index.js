@@ -63,10 +63,14 @@ app.get('/api/users', async (req, res) => {
 })
 
 
-
-
-
-
+app.get('/api/user/:id', (req, res) => {
+	//console.log(req.params.id);
+	const user = User.findOne({_id: req.params.id}, function(err, user){
+		if(user){
+			res.send(user);
+		}
+	})
+})
 
 
 app.post('/api/usersave', requireLogin, async (req, res) => {

@@ -1,6 +1,6 @@
 // Axios used to make AJAX requests
 import axios from 'axios'
-import { FETCH_USER, FETCH_USERS } from './types'
+import { FETCH_USER, FETCH_USERS, FETCH_USER_INFO } from './types'
 
 export const fetchUser = function(){
 	// Redux thunk gives us access to the dispatch function. 
@@ -13,7 +13,6 @@ export const fetchUser = function(){
 				payload: res.data
 				 }))
 			//.then(res => {console.log('In API with res', res)})
-
 /*
 Async refactor
 export const fetchUser = () => async (dispatch) => {
@@ -36,6 +35,15 @@ export const fetchUser = () => async (dispatch) => {
 // 			})
 
 // }
+
+export const fetchSingleUser = (id) => async dispatch =>{
+	const res = await axios.get(`/api/user/${id}`)
+
+	dispatch({
+		type: FETCH_USER_INFO,
+		payload:res.data
+	})
+}
 
 
 export const updateInfo = (values, history) => async dispatch =>{

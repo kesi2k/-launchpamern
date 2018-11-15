@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -17,10 +19,12 @@ class Landing extends Component
 		return this.props.users.map(user => {
 			return(
 				<div className="card grey darken-1" key={user._id}>
-			        <div className="card-content white-text">
-			          <span className="card-title">{ user.name }</span>
-			          <p> { user.name }</p>
-			      	</div>
+					<Link to={'/userview/'+user._id}>
+				        <div className="card-content white-text">
+				          <span className="card-title">{ user.name }</span>
+				          <p> Click for more information </p>
+				      	</div>
+				    </Link>
 		     	</div>
 		      )
 		})
