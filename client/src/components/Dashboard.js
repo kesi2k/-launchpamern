@@ -18,7 +18,7 @@ class Dashboard extends Component
 				<h1> User: { this.props.auth ? user.name : '' } </h1>
 				<h3> { this.props.auth ? user.description : '' } </h3>
 				<div className="action-btn">
-				<Link to='/info/fill' className="btn-floating btn-large red">
+				<Link to='/info/fill' className="red btn-flat">
 				   <i className="large material-icons">Edit</i>
 				</Link>
 			</div>
