@@ -17,7 +17,7 @@ class Dashboard extends Component
 			<div style={{ textAlign: 'center'}}>
 				<h1> User: { this.props.auth ? user.name : '' } </h1>
 				<h3> { this.props.auth ? user.description : '' } </h3>
-				<div className="fixed-action-btn">
+				<div className="action-btn">
 				<Link to='/info/fill' className="btn-floating btn-large red">
 				   <i className="large material-icons">Edit</i>
 				</Link>

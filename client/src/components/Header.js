@@ -19,7 +19,7 @@ class Header extends Component
 				return [
 				// <li key='1'><Name /></li>,
 				<li key='1' style= {{margin: '0 10px' }}>
-					<Link to='/dashboard'> Name: { this.props.auth.name }
+					<Link to='/dashboard'> Click for dashboard: { this.props.auth.name }
 					</Link>
 				</li>,
 				<li key='2'><a href="/api/logout"> Logout </a></li>

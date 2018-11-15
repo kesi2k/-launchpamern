@@ -18,7 +18,7 @@ class Dashboard extends Component
 		if(user)
 		{
 			return(			
-					<div>
+					<div style={{ textAlign: 'center'}}>
 						<h1> User: {user.name} </h1>
 						<h3> {user.description } </h3>
 					</div>
